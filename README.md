@@ -1,2 +1,2 @@
-# a-memory
-An memory for AI Agent/Assistant
+# A-Memory
+A memory for AI Agent/Assistant
