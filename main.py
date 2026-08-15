@@ -5,5 +5,6 @@ import sqlite3
 
 
 class Memory():
-    def __init__(self):
-        pass
+    def __init__(self, text="", image=None):
+        self.text = text
+        self.image = image
