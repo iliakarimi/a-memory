@@ -1,5 +1,1 @@
-
-
-class Memory():
-    def __init__(self):
-        pass
+pass # For now
