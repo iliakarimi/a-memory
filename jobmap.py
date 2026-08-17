@@ -1,20 +1,51 @@
-import csv
+class JobMap():
+    def __init__(self, data=None):
+        self.job = []
 
-def jobmap(data=None) -> str:
-    job = ''
-    num = 1
-    with open('jobmap.csv', 'a') as jf:
-        csvw = csv.writer(jf)
+    def addjob(self, data=None) -> str:
+        words = ''
+        symbol = '>'
+        num = 1
 
-        for j in data:
+        raw_data = data+symbol
+        for j in raw_data:
         
-            if not '>' in j:
-                job+=j
+            if not symbol in j:
+                words+=j
             
             else:
-                csvw.writerows(job)
+                self.job.append(words)
                 num+=1
-                job=''
+                words=''
+        return self.job
+
+    def usejob(self):
+        try:
+            self.job.reverse()
+
+            return self.job.pop()
+        
+        except IndexError:
+            return "Job ended"
+
+        except Exception as e:
+            return f"An Unexpected error: {e}"
 
 
-jobmap(data="test1>testty>I AM GUFFY>YOU ARE GUFFY>WE ARE GUFFY")
+
+
+        
+# jb = JobMap()
+
+# print(jb.addjob(data="test1>testty>I AM GUFFY>YOU ARE GUFFY>WE ARE GUFFY"))
+
+
+# import time
+
+# while True:
+#     jj = jb.usejob()
+
+#     print(jj)
+
+#     if jj == "Job ended":
+#         break
