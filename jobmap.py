@@ -3,11 +3,12 @@ class JobMap():
         self.job = []
 
     def addjob(self, data=None) -> str:
+
         words = ''
         symbol = '>'
         num = 1
-
         raw_data = data+symbol
+
         for j in raw_data:
         
             if not symbol in j:
@@ -17,7 +18,7 @@ class JobMap():
                 self.job.append(words)
                 num+=1
                 words=''
-        return self.job
+        # return self.job
 
     def usejob(self):
         try:
@@ -26,20 +27,22 @@ class JobMap():
             return self.job.pop()
         
         except IndexError:
-            return "Job ended"
+            return "JOB ENDED"
 
         except Exception as e:
             return f"An Unexpected error: {e}"
 
+    def checkjob(self): # Temporary Method
+
+        return self.job
 
 
 
-        
 # jb = JobMap()
 
-# print(jb.addjob(data="test1>testty>I AM GUFFY>YOU ARE GUFFY>WE ARE GUFFY"))
+# jb.addjob(data="test1>testty>I AM GUFFY>YOU ARE GUFFY>WE ARE GUFFY")
 
-
+# print(jb.checkjob())
 # import time
 
 # while True:
@@ -47,5 +50,5 @@ class JobMap():
 
 #     print(jj)
 
-#     if jj == "Job ended":
+#     if jj == "JOB ENDED":
 #         break
