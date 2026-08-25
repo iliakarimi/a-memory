@@ -52,6 +52,15 @@ class GoalsMem():
             return resu
 
 
+class ShortMem():
+    def __init__(self):
+        user_prompt = ""
+        agent_response = ""
+        n = 0
+    def get_string():
+        pass
+
+
 # gm = GoalsMem()
 
 # gm.temp(contextgoals="IDK", recentgoal="hell", )
