@@ -35,20 +35,3 @@ class JobMap():
     def checkjob(self): # Temporary Method
 
         return self.job
-
-
-
-# jb = JobMap()
-
-# jb.addjob(data="test1>testty>I AM GUFFY>YOU ARE GUFFY>WE ARE GUFFY")
-
-# print(jb.checkjob())
-# import time
-
-# while True:
-#     jj = jb.usejob()
-
-#     print(jj)
-
-#     if jj == "JOB ENDED":
-#         break
