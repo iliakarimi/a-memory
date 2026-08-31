@@ -7,8 +7,7 @@ class GoalsMem():
         self.cn = 0
         self.fn = 0
 
-
-    def temp(
+    def set_goals(
             self, contextgoals=None, recentgoal=None, 
             activegoal=None, chatfacts=None
             ) -> str:
@@ -26,7 +25,6 @@ class GoalsMem():
         if chatfacts:
             self.chat_facts.append(f"number{self.fn}: "+chatfacts)
             self.fn=+1
-
 
     def resault(
             self, cg=False, ag=False, 
@@ -54,22 +52,42 @@ class GoalsMem():
 
 class ShortMem():
     def __init__(self):
-        user_prompt = ""
-        agent_response = ""
-        n = 0
-    def get_string():
-        pass
+        self.messages = []
+        self.message_number = 0
+
+    def store_messages(self, role:str | None, message:str | None) -> str:
+        if self.message_number != 5:
+            self.messages.append({"role": role, "content": message})
+            self.message_number+=1
+        else:
+            self.messages.pop(0)
+            self.message_number = 0
+            self.messages.append({"role": role, "content": message})
+
+    def remind_messages(self):
+        return self.messages
+
 
 
 # gm = GoalsMem()
 
-# gm.temp(contextgoals="IDK", recentgoal="hell", )
+# gm.set_goals(contextgoals="IDK", recentgoal="hell", )
 # print(gm.resault(al=True)+"\n\n")
 
-# gm.temp(contextgoals="g", recentgoal="hello", )
+# gm.set_goals(contextgoals="g", recentgoal="hello", )
 # print(gm.resault(al=True)+"\n\n")
 
-# gm.temp(contextgoals="oejfjeg", recentgoal="dw", chatfacts="ijdhie")
-# gm.temp(chatfacts="dokwdwod")
+# gm.set_goals(contextgoals="oejfjeg", recentgoal="dw", chatfacts="ijdhie")
+# gm.set_goals(chatfacts="dokwdwod")
 # print(gm.resault(al=True, cg=True, cf=True))
 
+
+sm = ShortMem()
+
+sm.store_messages(role="a", message="kfjeejf")
+sm.store_messages(role="aef", message="kfje")
+sm.store_messages(role="aqref", message="kfqefrge")
+sm.store_messages(role="wrgvwaef", message="svrwef")
+sm.store_messages(role="rthraef", message="csvsr")
+sm.store_messages(role="aeffew", message="kfjeewf")
+print(sm.remind_messages())
