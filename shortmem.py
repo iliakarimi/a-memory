@@ -66,28 +66,3 @@ class ShortMem():
 
     def remind_messages(self):
         return self.messages
-
-
-
-# gm = GoalsMem()
-
-# gm.set_goals(contextgoals="IDK", recentgoal="hell", )
-# print(gm.resault(al=True)+"\n\n")
-
-# gm.set_goals(contextgoals="g", recentgoal="hello", )
-# print(gm.resault(al=True)+"\n\n")
-
-# gm.set_goals(contextgoals="oejfjeg", recentgoal="dw", chatfacts="ijdhie")
-# gm.set_goals(chatfacts="dokwdwod")
-# print(gm.resault(al=True, cg=True, cf=True))
-
-
-sm = ShortMem()
-
-sm.store_messages(role="a", message="kfjeejf")
-sm.store_messages(role="aef", message="kfje")
-sm.store_messages(role="aqref", message="kfqefrge")
-sm.store_messages(role="wrgvwaef", message="svrwef")
-sm.store_messages(role="rthraef", message="csvsr")
-sm.store_messages(role="aeffew", message="kfjeewf")
-print(sm.remind_messages())
