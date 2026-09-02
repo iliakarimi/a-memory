@@ -95,4 +95,5 @@ class ShortMem():
             self.messages.append({"role": role, "content": message})
     # Return all stored Messages
     def remind_messages(self):
-        return self.messages
+        for items in self.messages:
+            return items
