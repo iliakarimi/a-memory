@@ -1,4 +1,4 @@
-# A-Memory
+# A Memory
 
 This is A memory for AI Agent/Assistant
 
