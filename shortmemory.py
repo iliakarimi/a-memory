@@ -85,7 +85,7 @@ class ShortMem():
     # Storing messages with 8 limit and forget first and old message after add new message
     def store_messages(self, role:str | None, message:str | None) -> str:
         # Add new messages
-        if self.message_number != 8:
+        if self.message_number != 10:
             self.messages.append({"role": role, "content": message})
             self.message_number+=1
         # Remove old message after 8 message
